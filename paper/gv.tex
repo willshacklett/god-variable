@@ -26,56 +26,55 @@ The contribution of this work is exploratory. By framing survivability as a cons
 
 \section{Introduction}
 
-Many complex systems exhibit failure modes that are not attributable to single catastrophic events, but instead arise through the gradual loss of recovery mechanisms, increasing brittleness, and the accumulation of irreversible changes. Software systems, biological processes, and physical models alike often appear stable under short-horizon evaluation while drifting toward states from which recovery becomes increasingly unlikely.
+Many complex systems exhibit failure modes that are not attributable to single catastrophic events, but instead arise through the gradual loss of recovery mechanisms, increasing brittleness, and the accumulation of irreversible changes. Software systems, biological processes, and physical models alike may appear stable under short-horizon evaluation while drifting toward states from which recovery becomes increasingly unlikely.
 
-Traditional analytical approaches and engineering validation techniques tend to prioritize immediate correctness, local optimization, or short-term performance guarantees. While these methods are effective at identifying explicit faults, they are less equipped to detect slow degradation of long-horizon survivability. As a result, systems may pass all conventional tests while silently eroding their capacity for self-correction.
+Traditional analytical approaches and engineering validation techniques prioritize immediate correctness, local optimization, or short-term performance guarantees. While effective at identifying explicit faults, these methods are less equipped to detect slow degradation of long-horizon survivability. As a result, systems may satisfy all conventional tests while silently eroding their capacity for self-correction.
 
-This work explores whether survivability itself can be treated as a constrained quantity. Rather than optimizing systems directly for performance or reward, we ask whether it is possible to impose bounds that discourage irreversible degradation over extended horizons. The central question is not whether a system functions, but whether it remains capable of recovery and adaptation as it evolves.
+This work explores whether survivability itself can be treated as a constrained quantity. Rather than optimizing systems directly for performance or reward, we ask whether it is possible to impose bounds that discourage irreversible degradation over extended horizons. The central question is not whether a system functions at a given moment, but whether it retains the capacity to recover and adapt as it evolves.
 
-To investigate this question, we introduce the God Variable (GV) as a proposed scalar measure intended to summarize long-horizon survivability properties. GV is not presented as a fundamental constant or conserved quantity. Instead, it is treated as a modeling construct whose usefulness must be evaluated through explicit tests, simulations, and failure cases.
+To investigate this question, we introduce the God Variable (GV) as a proposed scalar measure intended to summarize long-horizon survivability properties. GV is not presented as a fundamental constant or physical law. Instead, it is treated as a modeling construct whose usefulness must be evaluated through explicit tests, simulations, and failure cases.
+
+\subsection*{Limitations and Non-Claims}
+
+Before proceeding, it is important to clarify the scope of this work. The God Variable (GV) is not proposed as a fundamental physical constant, conserved quantity, or universal law. No claim is made that GV governs physical reality, cosmology, or biological evolution in a literal sense.
+
+The models presented in this manuscript are intentionally simplified and exploratory. They are designed to probe conceptual questions about survivability, irreversibility, and long-horizon behavior, not to establish empirical validity in real-world systems. Failure of GV in these models would not falsify survivability-based approaches broadly, but would indicate limitations of scalar formulations.
+
+This work does not attempt to optimize systems, predict outcomes, or replace existing analytical frameworks. Its sole aim is to examine whether survivability can be meaningfully treated as a constrained quantity, and to identify where such an approach succeeds, fails, or becomes ambiguous.
 
 \section{Conceptual Framework}
 
-The God Variable (GV) is introduced as a scalar quantity designed to capture aspects of system survivability that are not directly observable through short-term metrics. Conceptually, GV is intended to reflect three related properties: the ability of a system to persist over long horizons, its capacity for self-correction following perturbations, and its exposure to irreversible state transitions.
+The God Variable (GV) is introduced as a scalar quantity intended to capture aspects of system survivability that are not directly observable through short-term metrics. Conceptually, GV reflects three related properties: persistence over long horizons, capacity for self-correction following perturbations, and exposure to irreversible state transitions.
 
-Importantly, GV is not assumed to be universal, conserved, or uniquely defined. Different systems may admit different formulations of GV, and some systems may not admit a meaningful scalar representation at all. The purpose of introducing GV is not to assert its necessity, but to test whether survivability constraints can be meaningfully expressed in scalar form under controlled conditions.
+GV is not assumed to be unique or universally applicable. Different systems may admit different formulations of survivability, and some systems may not admit a meaningful scalar representation at all. The purpose of introducing GV is not to assert its necessity, but to test whether survivability constraints can be expressed in scalar form under controlled conditions.
 
-By treating survivability as a constraint rather than an objective, GV differs from traditional optimization variables. A system may achieve high short-term performance while violating survivability constraints, just as a system may remain survivable while sacrificing immediate efficiency. GV is intended to detect the former case, not to eliminate trade-offs.
+By treating survivability as a constraint rather than an optimization target, GV differs from traditional objective functions. A system may achieve high short-term performance while violating survivability constraints, just as a system may remain survivable while sacrificing immediate efficiency. GV is intended to detect the former case, not to eliminate trade-offs.
 
 \section{Toy Models and Simulations}
 
-To explore the behavior of the God Variable (GV) under controlled conditions, we implement a set of intentionally simplified toy models. These simulations are designed to probe long-horizon survivability, sensitivity to perturbations, and the emergence of irreversible behavior, rather than to model complete real-world systems.
+To explore the behavior of the God Variable under controlled conditions, we implement a set of intentionally simplified toy models. These simulations are designed to probe long-horizon survivability, sensitivity to perturbations, and the emergence of irreversible behavior, rather than to model complete real-world systems.
 
 \subsection{Stochastic Survivability Model (Langevin Dynamics)}
 
-The file \texttt{simulations/langevin.py} implements a stochastic dynamical system inspired by Langevin-type equations. Noise terms are used to model environmental perturbations, while drift and damping terms capture stabilizing and destabilizing forces.
+The file \texttt{simulations/langevin.py} implements a stochastic dynamical system inspired by Langevin-type equations. Noise terms model environmental perturbations, while drift and damping terms represent stabilizing and destabilizing forces.
 
-GV is evaluated along simulated trajectories to examine whether cumulative stochastic effects produce detectable degradation in long-horizon survivability prior to overt system failure. This model is used to test GV sensitivity to noise intensity, recovery strength, and parameter drift.
+GV is evaluated along simulated trajectories to examine whether cumulative stochastic effects produce detectable degradation in long-horizon survivability prior to overt system failure. This model probes GV sensitivity to noise intensity, recovery strength, and parameter drift.
 
 \subsection{Cosmology-Inspired Constraint Model (FRW Toy Model)}
 
-The file \texttt{simulations/frw.py} implements a simplified, cosmology-inspired evolution model. While not intended as a physical cosmology, the model explores how constraint-driven dynamics evolve under monotonic expansion-like behavior.
+The file \texttt{simulations/frw.py} implements a simplified, cosmology-inspired evolution model. While not intended as a physical cosmology, the model explores constraint-driven dynamics under monotonic, expansion-like behavior.
 
-In this setting, GV is examined as a function of cumulative system evolution, testing whether irreversible trajectories can be distinguished from recoverable ones under coarse-grained metrics. The purpose is conceptual exploration rather than physical interpretation.
+In this setting, GV is examined as a function of cumulative system evolution, testing whether irreversible trajectories can be distinguished from recoverable ones using coarse-grained metrics. The purpose is conceptual exploration rather than physical interpretation.
 
 \subsection{Interpretive Scope}
 
 These models are not presented as validation of GV, but as exploratory probes. Their role is to expose failure modes, sensitivities, and ambiguities in scalar survivability formulations. Agreement between GV behavior and intuitive survivability is treated as suggestive, while disagreement is treated as informative.
 
-
-\section{Limitations and Scope}
-
-This work has several important limitations. First, survivability in real systems is often multi-dimensional and context-dependent, and a single scalar quantity may be insufficient to capture its full structure. GV should therefore be understood as a simplification, not a comprehensive descriptor.
-
-Second, the models presented here are intentionally minimal and abstract. Results obtained from toy simulations do not directly generalize to complex real-world systems without additional assumptions. Failure of GV in these settings would not invalidate survivability-based approaches more broadly, but would indicate limitations of scalar formulations.
-
-Finally, this manuscript does not claim empirical validation of GV in deployed systems. The emphasis is on falsifiability, internal consistency, and conceptual clarity rather than demonstrated utility.
-
 \section{Discussion}
 
-The exploratory results suggest that framing survivability as a constrained quantity may offer a useful perspective on long-horizon system behavior. In some toy settings, GV responds to degradation pathways that are invisible to short-term metrics, while in others it fails to provide meaningful discrimination.
+The exploratory results indicate that framing survivability as a constrained quantity can, in some settings, highlight degradation pathways that evade short-horizon metrics. In other settings, GV fails to provide meaningful discrimination, underscoring the limitations of scalar approaches.
 
-These mixed outcomes highlight both the promise and the limitations of scalar survivability measures. Rather than treating GV as a definitive metric, it may be more productive to view it as a diagnostic tool whose failures are as informative as its successes. Extensions to multi-dimensional or system-specific variants may address some of the observed shortcomings.
+These mixed outcomes suggest that scalar survivability measures should be treated as diagnostic tools rather than definitive metrics. Extensions to multi-dimensional or system-specific formulations may address some shortcomings, while negative results help delineate the boundaries of applicability.
 
 \section{Conclusion}
 
