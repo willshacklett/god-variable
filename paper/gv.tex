@@ -1,72 +1,42 @@
-
 \documentclass[11pt]{article}
+
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{geometry}
 \geometry{margin=1in}
 
-\title{A Constraint-Based Extension to Stochastic and Cosmological Dynamics}
+\title{The God Variable: A Constraint-Based Exploration of Long-Horizon Survivability}
 \author{William Shacklett}
-\date{}
+\date{\today}
 
 \begin{document}
+
 \maketitle
 
 \begin{abstract}
-We propose a scalar constraint functional—termed the God Variable (GV)—that modifies system dynamics by suppressing trajectories which eliminate long-term coherence, rather than introducing new forces or energy densities. The framework is formulated as a constraint bias acting on admissible histories in both stochastic and cosmological settings. We demonstrate its behavior using a Langevin toy model and a Friedmann–Robertson–Walker (FRW) toy cosmology. The approach is explicitly non-teleological, recovers standard dynamics in the vanishing-coupling limit, and makes no claim of universality. Its purpose is to explore whether persistent organization can be represented explicitly rather than absorbed implicitly into initial conditions or selection effects.
+% Abstract goes here
 \end{abstract}
 
-\section{Introduction and Motivation}
-Physical law describes how systems evolve under forces, symmetries, and conservation principles. Yet many systems exhibit long-term persistence that appears statistically fragile under unconstrained entropy growth. This work asks whether persistent constraint can be represented explicitly within dynamics rather than absorbed into initial conditions or selection effects.
+\section{Introduction}
+% Motivation and background
 
-\section{Conceptual Definition of the God Variable}
-The God Variable (GV) is a scalar functional acting on system trajectories. It is not a force, field, conserved quantity, or agent. It modifies the probability measure over admissible histories by penalizing trajectories that eliminate future coherence.
+\section{Conceptual Framework}
+% Definition and intent of the God Variable
 
-\section{Constraint-Modified Action}
-We define
-\[
-\mathcal{G}[\Gamma] = \int_{t_0}^{t_f} \left( \mathcal{L}(\Gamma,\dot{\Gamma}) - \lambda\,\Phi(\Gamma,t) \right) dt
-\]
-where $\Phi$ is system-dependent and $\lambda \ge 0$. The limit $\lambda \to 0$ recovers standard dynamics exactly.
+\section{Toy Models and Simulations}
+% How the simulations relate to the hypothesis
 
-\section{Stochastic Dynamics: A Langevin Toy Model}
-We consider
-\[
-\dot{x} = -\nabla V(x) + \sqrt{2D}\,\eta(t)
-\]
-and introduce a constraint term
-\[
-\dot{x} = -\nabla V(x) - \lambda\nabla\Phi(x,t) + \sqrt{2D}\,\eta(t)
-\]
-with illustrative choice
-\[
-\Phi(x,t) = \left(\frac{d}{dt}\mathbb{E}[x^2]\right)^2 .
-\]
+\section{Limitations and Scope}
+% What this does not claim
 
-\section{Interpretation of Constraint Bias}
-The constraint modifies the probability of histories without suppressing noise or violating thermodynamics. Destabilizing excursions are statistically disfavored.
-
-\section{Cosmological Dynamics: An FRW Toy Model}
-For a flat universe,
-\[
-H^2 = \frac{8\pi G}{3}\rho .
-\]
-We introduce
-\[
-H^2 = \frac{8\pi G}{3}\rho + \lambda\,\Psi(a,t),
-\quad
-\Psi(a,t) = -\frac{d^2}{dt^2}\ln a .
-\]
-Acceleration-like behavior can emerge from constraint bias rather than an added energy density.
-
-\section{Constraint Bias vs Teleology}
-The presence of a constraint does not imply purpose or foresight. No preferred endpoint is specified.
-
-\section{Limitations and Falsifiability}
-The framework is exploratory and system-relative. It is falsifiable in a comparative sense: constraint-augmented dynamics must preserve long-term coherence more effectively than unconstrained dynamics without fine-tuning.
+\section{Discussion}
+% Interpretation and future directions
 
 \section{Conclusion}
-GV provides a minimal formalism for expressing persistent constraint as a bias on system histories. Whether such bias reflects a deeper physical principle remains open.
+% Summary
+
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}
