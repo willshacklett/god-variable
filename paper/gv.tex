@@ -44,11 +44,24 @@ By treating survivability as a constraint rather than an objective, GV differs f
 
 \section{Toy Models and Simulations}
 
-To explore the behavior of GV in practice, we construct a set of simplified toy models and simulations. These models are not intended to represent complete physical or biological systems, but to isolate specific mechanisms relevant to survivability, irreversibility, and recovery.
+To explore the behavior of the God Variable (GV) under controlled conditions, we implement a set of intentionally simplified toy models. These simulations are designed to probe long-horizon survivability, sensitivity to perturbations, and the emergence of irreversible behavior, rather than to model complete real-world systems.
 
-The simulations examine how GV responds to cumulative changes, stochastic perturbations, and parameter drift. By observing GV under repeated evolution, we test whether it provides early warning signals of degradation that are not apparent from local system metrics. Ablation-style experiments are used to assess the sensitivity of GV to modeling assumptions and component removal.
+\subsection{Stochastic Survivability Model (Langevin Dynamics)}
 
-All simulations are designed to be reproducible and intentionally limited in scope. Their purpose is not validation, but exploration: to determine whether scalar survivability constraints are informative or misleading in controlled settings.
+The file \texttt{simulations/langevin.py} implements a stochastic dynamical system inspired by Langevin-type equations. Noise terms are used to model environmental perturbations, while drift and damping terms capture stabilizing and destabilizing forces.
+
+GV is evaluated along simulated trajectories to examine whether cumulative stochastic effects produce detectable degradation in long-horizon survivability prior to overt system failure. This model is used to test GV sensitivity to noise intensity, recovery strength, and parameter drift.
+
+\subsection{Cosmology-Inspired Constraint Model (FRW Toy Model)}
+
+The file \texttt{simulations/frw.py} implements a simplified, cosmology-inspired evolution model. While not intended as a physical cosmology, the model explores how constraint-driven dynamics evolve under monotonic expansion-like behavior.
+
+In this setting, GV is examined as a function of cumulative system evolution, testing whether irreversible trajectories can be distinguished from recoverable ones under coarse-grained metrics. The purpose is conceptual exploration rather than physical interpretation.
+
+\subsection{Interpretive Scope}
+
+These models are not presented as validation of GV, but as exploratory probes. Their role is to expose failure modes, sensitivities, and ambiguities in scalar survivability formulations. Agreement between GV behavior and intuitive survivability is treated as suggestive, while disagreement is treated as informative.
+
 
 \section{Limitations and Scope}
 
